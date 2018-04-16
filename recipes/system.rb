@@ -3,8 +3,16 @@ system_packages = %w[
   dkms
 ]
 
-package 'system_packages' do
-  package_name system_packages
+management_packages = %w[
+  stow
+]
+
+# This is sketchy on purpose, sue me.
+local_variables.map(&:to_s).each do |v|
+  next unless v =~ /_packages$/
+  package "install_#{v}" do
+    package_name binding.local_variable_get(v)
+  end
 end
 
 execute 'enable_verbose_plymouth' do
