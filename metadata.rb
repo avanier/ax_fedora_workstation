@@ -14,3 +14,5 @@ issues_url 'https://github.com/avanier/ax_fedora_workstation/issues'
 
 depends 'chrome', '~> 4.0.2'
 depends 'os-hardening', '~> 3.0.0'
+depends 'ssh-hardening', '~> 2.3.1'
+depends 'firefox', '~> 4.0.0'

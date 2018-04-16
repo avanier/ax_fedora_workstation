@@ -23,3 +23,5 @@ include_recipe '::hardening'
 include_recipe '::window_manager'
 include_recipe '::networking'
 include_recipe '::vbox_garbage'
+
+include_recipe '::desktop_apps'
