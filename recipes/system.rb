@@ -14,7 +14,7 @@ execute 'enable_verbose_plymouth' do
 end
 
 execute 'remove_grub_quiet' do
-  command "/usr/bin/sed --silent --in-place 's/.quiet//' /etc/default/grub"
+  command "/usr/bin/sed --in-place 's/.quiet//g' /etc/default/grub"
   live_stream true
   notifies :run, 'execute[rebuild_grub2_bios]', :delayed
   notifies :run, 'execute[rebuild_grub2_efi]', :delayed
