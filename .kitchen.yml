@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+  gui: true
+  customize:
+    cpus: 4
+    memory: 4096
+
+provisioner:
+  name: chef_zero
+  always_update_cookbooks: true
+
+platforms:
+  - name: fedora27_workstation
+    driver:
+      box: 'generic/fedora27'
+
+suites:
+  - name: default
+    run_list:
+      - recipe[ax_fedora_workstation::default]
+    attributes:
