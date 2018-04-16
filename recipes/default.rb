@@ -20,7 +20,7 @@ abort 'This cookbook is only usable with Fedora' unless node['platform'] == 'fed
 
 include_recipe '::system'
 include_recipe '::hardening'
-include_recipe '::window_manager'
+include_recipe '::window_managers'
 include_recipe '::networking'
 include_recipe '::vbox_garbage'
 
