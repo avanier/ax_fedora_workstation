@@ -25,3 +25,5 @@ local_variables.map(&:to_s).each do |v|
     package_name binding.local_variable_get(v)
   end
 end
+
+include_recipe 'vscode'

@@ -1,3 +1,5 @@
+# This cookbook should not be tested with the Docker driver
+# Stick to kvm and VirtualBox
 ---
 driver:
   name: vagrant
@@ -8,15 +10,28 @@ driver:
 
 provisioner:
   name: chef_zero
+  data_bags_path: 'fixtures/data_bags'
   always_update_cookbooks: true
 
 platforms:
   - name: fedora27_workstation
     driver:
       box: 'generic/fedora27'
+    attributes:
+      ax_workstation:
+        bag_path: user_data
+        users:
+          avanier:
+            keys:
+              - name: default_key
+                authorized: true
+            dotfiles:
+              repo:
+                bindings:
+                  - source: some_folder
+                    dest:   /home/avanier/.config/some_destination
 
 suites:
   - name: default
     run_list:
       - recipe[ax_fedora_workstation::default]
-    attributes:

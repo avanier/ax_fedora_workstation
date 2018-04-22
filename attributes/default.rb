@@ -1,0 +1,1 @@
+default['ax_workstation']['bag_path'] = 'user_data'

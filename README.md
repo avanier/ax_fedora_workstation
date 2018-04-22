@@ -6,6 +6,11 @@ A Chef cookbook to provision Fedora based workstations.
 
 - Check out [`attributes/default.rb`](attributes/default.rb) for what can be configured.
 - Include `ax_fedora_workstation::default` as a recipe in your runlist.
+
+## Data Bags
+
+Be aware that most data bag values are expected to be base64 encoded for convenience.
+
 ## Contributing
 
 1. Fork it!

@@ -7,6 +7,10 @@ management_packages = %w[
   stow
 ]
 
+shell_packages = %w[
+  zsh
+]
+
 # This is sketchy on purpose, sue me.
 local_variables.map(&:to_s).each do |v|
   next unless v =~ /_packages$/
@@ -39,4 +43,10 @@ execute 'rebuild_grub2_efi' do
   command '/usr/sbin/grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg'
   live_stream true
   action :nothing
+end
+
+docker_installation 'default'
+
+docker_service_manager 'default' do
+  action :start
 end
