@@ -93,6 +93,8 @@ data_bag(bag_path).each do |some_user|
         checkout_branch v['branch'] || 'master'
         enable_submodules true # just in case you're one of _those people_
         retries 3
+        user some_user
+        group some_user
         action :sync
       end
 

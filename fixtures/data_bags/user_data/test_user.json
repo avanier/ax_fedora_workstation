@@ -1,6 +1,10 @@
 {
   "id": "test_user",
   "shell": "zsh",
+  "groups": [
+    "sysadmin",
+    "docker"
+  ],
   "password": "$5$NCVHPd7hbe.avYIN$f7Kd8lqgam1jEvRh/nZ2NSKqIGaYoZB7i2u4diqKPiB",
   "keys": {
     "default_key": {

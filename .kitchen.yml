@@ -19,17 +19,8 @@ platforms:
       box: 'generic/fedora27'
     attributes:
       ax_workstation:
-        bag_path: user_data
-        users:
-          avanier:
-            keys:
-              - name: default_key
-                authorized: true
-            dotfiles:
-              repo:
-                bindings:
-                  - source: some_folder
-                    dest:   /home/avanier/.config/some_destination
+        sudo_groups:
+          - sysadmin
 
 suites:
   - name: default

@@ -27,4 +27,5 @@ include_recipe '::vbox_garbage'
 include_recipe '::development_tools'
 include_recipe '::desktop_apps'
 
+include_recipe '::groups'
 include_recipe '::users'
