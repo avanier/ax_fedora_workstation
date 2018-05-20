@@ -1,12 +1,19 @@
 # This cookbook should not be tested with the Docker driver
-# Stick to kvm and VirtualBox
+# Stick to libvirt and VirtualBox
 ---
 driver:
   name: vagrant
-  gui: true
+  provider: libvirt
+  # libvirt and the Fedora image are picky about which bridge nic you use
+  # tinker with the dev value if you get explosions
+  network:
+    - ["public_network", { dev: "vibr2", mode: "bridge", type: "bridge" }]
+
+driver_config:
   customize:
     cpus: 4
     memory: 4096
+    disk_bus: sata
 
 provisioner:
   name: chef_zero
@@ -15,7 +22,7 @@ provisioner:
 
 platforms:
   - name: fedora27_workstation
-    driver:
+    driver_config:
       box: 'generic/fedora27'
     attributes:
       ax_workstation:
