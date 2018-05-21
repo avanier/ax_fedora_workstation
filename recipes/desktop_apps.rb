@@ -23,6 +23,13 @@ utility_packages = %w[
   xscreensaver-base
 ]
 
+sound_packages = %w[
+  pulseaudio-equalizer
+  pavucontrol
+  pasystray
+  soxr
+]
+
 # This is sketchy on purpose, sue me.
 local_variables.map(&:to_s).each do |v|
   next unless v =~ /_packages$/
