@@ -25,6 +25,7 @@ include_recipe '::networking'
 include_recipe '::vbox_garbage'
 
 include_recipe '::development_tools'
+include_recipe '::cli_apps'
 include_recipe '::desktop_apps'
 
 include_recipe '::users'
