@@ -43,6 +43,7 @@ sxlock_deps = %w[
 ]
 
 rofi_deps = %w[
+  bison
   cairo-devel
   check-devel
   flex
