@@ -1,4 +1,4 @@
-node.default['go']['version'] = '1.10.2'
+node.default['go']['version'] = node['ax_workstation']['go']['version']
 
 include_recipe 'golang'
 
