@@ -107,7 +107,6 @@ execute 'configure_rofi' do
   action :nothing
 end
 
-
 execute 'compile_rofi' do
   command 'make'
   cwd File.join(node['ax_workstation']['deps_folder'], 'rofi')

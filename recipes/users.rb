@@ -55,7 +55,7 @@ data_bag(bag_path).each do |some_user|
 
     authorized_keys = []
 
-    user_data['keys'].select { |_k, v| v['authorized'] == true }.each do |_k, v|
+    user_data['keys'].select { |_k, v| v['authorized'] == true }.each_value do |v|
       authorized_keys.push(Base64.decode64(v['public'].strip))
     end
 

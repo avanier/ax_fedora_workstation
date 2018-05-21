@@ -23,7 +23,6 @@ groups.uniq.each do |g|
   group g do
     members users
   end
-
 end
 
 sudo_groups = node.deep_fetch('ax_workstation', 'sudo_groups') || []
