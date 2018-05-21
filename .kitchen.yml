@@ -7,7 +7,7 @@ driver:
   # libvirt and the Fedora image are picky about which bridge nic you use
   # tinker with the dev value if you get explosions
   network:
-    - ["public_network", { dev: "vibr2", mode: "bridge", type: "bridge" }]
+    - ["public_network", { dev: "virbr0", mode: "bridge", type: "direct", mac: "52:54:00:12:34:56" }]
 
 driver_config:
   customize:
