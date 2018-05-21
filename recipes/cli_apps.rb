@@ -6,7 +6,6 @@ python_package 'awscli'
 python_package 'httpie'
 
 yum_repository 'google-cloud-sdk' do
-  name 'Google Cloud SDK'
   baseurl 'https://packages.cloud.google.com/yum/repos/cloud-sdk-el7-x86_64'
   gpgkey [
     'https://packages.cloud.google.com/yum/doc/yum-key.gpg',
