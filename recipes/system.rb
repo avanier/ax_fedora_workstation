@@ -22,7 +22,7 @@ end
 execute 'enable_verbose_plymouth' do
   command '/usr/sbin/plymouth-set-default-theme details -R'
   live_stream true
-  not_if { `plymouth-set-default-theme`.include?('details') }
+  not_if { Mixlib::ShellOut.new('plymouth-set-default-theme').run_command.stdout.include?('details') }
 end
 
 execute 'remove_grub_quiet' do
