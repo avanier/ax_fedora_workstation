@@ -2,7 +2,12 @@ include_recipe 'chrome'
 include_recipe 'firefox'
 
 security_packages = %w[
+  usbguard
+  usbguard-tools
+  usbguard-applet-qt
+  policycoreutils-python-utils
   gnupg2
+  pgpdump
   kgpg
 ]
 
