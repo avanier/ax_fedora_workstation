@@ -8,6 +8,8 @@ driver:
   # tinker with the dev value if you get explosions
   network:
     - ["public_network", { dev: "virbr0", mode: "bridge", type: "direct", mac: "52:54:00:12:34:56" }]
+  ssh:
+    insert_key: false
 
 driver_config:
   customize:
