@@ -16,6 +16,10 @@
       "private": "aGVycGRlcnAK",
       "public": "aGVycGRlcnAK",
       "authorized": true
+    },
+    "public_only": {
+      "public": "aGVycGRlcnAK",
+      "authorized": true
     }
   },
   "repositories":{

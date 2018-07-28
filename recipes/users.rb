@@ -37,12 +37,15 @@ data_bag(bag_path).each do |some_user|
   if user_data['keys']
 
     user_data['keys'].each do |k, v|
-      file File.join(user_home, '.ssh', k) do
-        content Base64.decode64(v['private'])
-        mode '0600'
-        owner some_user
-        group some_user
-        sensitive true
+
+      if v.key?('private')
+        file File.join(user_home, '.ssh', k) do
+          content Base64.decode64(v['private'])
+          mode '0600'
+          owner some_user
+          group some_user
+          sensitive true
+        end
       end
 
       file File.join(user_home, '.ssh', k + '.pub') do
