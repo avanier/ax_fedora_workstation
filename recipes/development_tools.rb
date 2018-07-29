@@ -10,6 +10,15 @@ development_packages = %w[
   autoconf
 ]
 
+libvirt_packages = %w [
+  libguestfs-tools-c
+  libvirt
+  libvirt-devel
+  libxml2-devel
+  libxslt-devel
+  qemu
+]
+
 # This is sketchy on purpose, sue me.
 local_variables.map(&:to_s).each do |v|
   next unless v =~ /_packages$/
