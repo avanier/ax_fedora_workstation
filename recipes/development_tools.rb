@@ -10,7 +10,7 @@ development_packages = %w[
   autoconf
 ]
 
-libvirt_packages = %w [
+libvirt_packages = %w[
   libguestfs-tools-c
   libvirt
   libvirt-devel
