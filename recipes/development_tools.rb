@@ -8,6 +8,7 @@ end
 
 development_packages = %w[
   autoconf
+  automake
 ]
 
 libvirt_packages = %w[
