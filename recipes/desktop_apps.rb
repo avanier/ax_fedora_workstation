@@ -30,6 +30,8 @@ sound_packages = %w[
   soxr
 ]
 
+package "https://downloads.slack-edge.com/linux_releases/slack-#{node['ax_workstation']['slack']['version']}.rpm"
+
 # This is sketchy on purpose, sue me.
 local_variables.map(&:to_s).each do |v|
   next unless v =~ /_packages$/

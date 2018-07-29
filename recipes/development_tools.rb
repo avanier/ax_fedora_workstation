@@ -18,7 +18,6 @@ local_variables.map(&:to_s).each do |v|
   end
 end
 
-
 include_recipe 'golang'
 
 node.default['go']['packages'] = %w[
