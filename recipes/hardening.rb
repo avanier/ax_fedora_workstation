@@ -1,9 +1,10 @@
 node.default['os-hardening']['desktop']['enable'] = true
+node.default['os-hardening']['network']['forwarding'] = true
+node.default['os-hardening']['security']['init']['single'] = true
+node.default['os-hardening']['security']['kernel']['disable_filesystems'] = [ 'cramfs', 'freevxfs', 'jffs2', 'hfs', 'squashfs', 'udf' ]
 node.default['os-hardening']['security']['packages']['clean'] = false
 node.default['os-hardening']['security']['packages']['list'] = []
 node.default['os-hardening']['security']['selinux_mode'] = 'enforcing'
-node.default['os-hardening']['network']['forwarding'] = true
-node.default['os-hardening']['security']['init']['single'] = true
 
 include_recipe 'os-hardening'
 include_recipe 'ssh-hardening'
