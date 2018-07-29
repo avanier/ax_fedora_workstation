@@ -20,12 +20,12 @@ abort 'This cookbook is only usable with Fedora' unless node['platform'] == 'fed
 
 include_recipe '::system'
 include_recipe '::hardening'
-include_recipe '::window_managers'
+include_recipe '::development_tools'
+include_recipe '::cli_apps'
 include_recipe '::networking'
 include_recipe '::vbox_garbage'
 
-include_recipe '::development_tools'
-include_recipe '::cli_apps'
+include_recipe '::window_managers'
 include_recipe '::desktop_apps'
 
 include_recipe '::users'
