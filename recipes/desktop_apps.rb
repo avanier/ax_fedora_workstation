@@ -1,6 +1,22 @@
 include_recipe 'chrome'
 include_recipe 'firefox'
 
+package 'snapd'
+
+# not_if snap list | awk '{print $1}' | grep -vE '^Name'
+
+snap_applications = %w[
+  signal-desktop
+]
+
+snap_applications.each do |app|
+  execute "install_snap_application_#{app}" do
+    command "snap install #{app}"
+    live_stream true
+    not_if { Mixlib::ShellOut.new('snap list |  awk "{print $1}" | grep -vE "^Name"').run_command.stdout.include?(app) }
+  end
+end
+
 security_packages = %w[
   usbguard
   usbguard-tools
