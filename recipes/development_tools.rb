@@ -28,8 +28,8 @@ local_variables.map(&:to_s).each do |v|
   end
 end
 
-include_recipe 'yarn::repository'
-include_recipe 'yarn::install_package'
+# include_recipe 'yarn::repository'
+# include_recipe 'yarn::install_package'
 
 include_recipe 'golang'
 
