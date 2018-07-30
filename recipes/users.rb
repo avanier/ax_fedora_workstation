@@ -102,7 +102,7 @@ data_bag(bag_path).each do |some_user|
       end
 
       execute "stow_#{k}" do
-        command "/usr/bin/find . -maxdepth 1 -type d ! -name .git ! -name . | sed 's/\.\\///' | xargs -I \{\} /usr/bin/stow --restow --verbose 1 --target='#{user_home}' \{\}"
+        command "/usr/bin/find . -maxdepth 1 -type d ! -name .git ! -name . ! -name _i3-matcher | sed 's/\.\\///' | xargs -I \{\} /usr/bin/stow --restow --verbose 1 --target='#{user_home}' \{\}"
         cwd File.join(code_dir, '.chef_managed', k)
         live_stream true
         only_if { v['stowable'] == true }
