@@ -4,7 +4,7 @@ maintainer_email 'alexis@amonoid.io'
 license 'Apache-2.0'
 description 'Installs/Configures knc_code_workstation'
 long_description 'Installs/Configures ax_fedora_workstation'
-version '0.7.1'
+version '0.8.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 supports 'fedora'
